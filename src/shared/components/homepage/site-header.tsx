@@ -14,12 +14,12 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="Main navigation" className={styles.navigation}>
-          <Link href="#events">Explore events</Link>
-          <Link href="#categories">Categories</Link>
-          <Link href="#host">For organizers</Link>
+          <Link href="/events">Explore events</Link>
+          <Link href="/#categories">Categories</Link>
+          <Link href="/organize">For organizers</Link>
         </nav>
 
-        <Link className={styles.headerCta} href="#host">
+        <Link className={styles.headerCta} href="/organize">
           Create an event
           <ArrowUpRight aria-hidden="true" size={16} />
         </Link>

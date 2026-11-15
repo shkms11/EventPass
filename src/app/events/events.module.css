@@ -1,0 +1,59 @@
+.page {
+  min-height: 100vh;
+  background: #fbfaf7;
+  color: #202a27;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.main {
+  width: min(1180px, calc(100% - 64px));
+  min-height: calc(100vh - 194px);
+  margin-inline: auto;
+  padding-block: 68px 90px;
+}
+
+.heading {
+  margin-bottom: 35px;
+}
+
+.eyebrow {
+  color: #ee7655;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.65px;
+}
+
+.heading h1 {
+  margin: 12px 0 10px;
+  font-size: clamp(40px, 6vw, 66px);
+  font-weight: 700;
+  letter-spacing: -4px;
+  line-height: 1;
+}
+
+.heading p {
+  max-width: 550px;
+  margin: 0;
+  color: #75807a;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.demoNote {
+  margin: 25px 0 0;
+  color: #8a938c;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+  .main {
+    width: min(100% - 36px, 520px);
+    padding-block: 48px 65px;
+  }
+
+  .heading h1 {
+    font-size: 42px;
+    letter-spacing: -2.7px;
+  }
+}

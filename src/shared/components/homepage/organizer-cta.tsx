@@ -14,8 +14,8 @@ export function OrganizerCta() {
           From your first RSVP to the final encore, make it easy for people to
           show up for what you create.
         </p>
-        <Link className={styles.organizerButton} href="mailto:hello@eventpass.example">
-          Start hosting
+        <Link className={styles.organizerButton} href="/organize">
+          Explore organizer tools
           <ArrowUpRight aria-hidden="true" size={17} />
         </Link>
       </div>

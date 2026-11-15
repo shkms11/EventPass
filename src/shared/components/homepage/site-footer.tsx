@@ -16,9 +16,9 @@ export function SiteFooter() {
           <p>Less scrolling. More living.</p>
         </div>
         <nav aria-label="Footer navigation" className={styles.footerLinks}>
-          <Link href="#events">Find an event</Link>
-          <Link href="#categories">Explore categories</Link>
-          <Link href="#host">Host an event</Link>
+          <Link href="/events">Find an event</Link>
+          <Link href="/#categories">Explore categories</Link>
+          <Link href="/organize">Host an event</Link>
         </nav>
         <span className={styles.footerNote}>MADE FOR GETTING OUT THERE</span>
       </div>

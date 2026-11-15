@@ -36,7 +36,15 @@ export function CategorySection() {
       </div>
       <div className={styles.categoryGrid}>
         {categories.map(({ label, detail, icon: Icon }, index) => (
-          <Link className={styles.categoryCard} href="#events" key={label}>
+          <Link
+            className={styles.categoryCard}
+            href={
+              label === "A little bit of everything"
+                ? "/events"
+                : `/events?category=${encodeURIComponent(label)}`
+            }
+            key={label}
+          >
             <span className={`${styles.categoryIcon} ${styles[`categoryTone${index + 1}`]}`}>
               <Icon aria-hidden="true" size={21} strokeWidth={1.8} />
             </span>

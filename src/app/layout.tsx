@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EventPass | Find your next event",
+  title: {
+    default: "EventPass | Find your next event",
+    template: "%s | EventPass",
+  },
   description:
-    "Discover live music, food, art, and experiences worth leaving home for with EventPass.",
+    "Discover local events, explore experiences, and bring your community together with EventPass.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

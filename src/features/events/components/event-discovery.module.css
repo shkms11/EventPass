@@ -1,0 +1,274 @@
+.discovery {
+  display: grid;
+  gap: 25px;
+}
+
+.searchBox {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 13px;
+  padding: 0 18px;
+  border: 1px solid #e8e5dd;
+  border-radius: 9px;
+  background: white;
+  color: #78817b;
+  box-shadow: 0 6px 24px rgb(32 42 39 / 4%);
+}
+
+.searchBox:focus-within {
+  border-color: #ee7655;
+  box-shadow: 0 0 0 3px rgb(238 118 85 / 13%);
+}
+
+.searchBox input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #202a27;
+  font: inherit;
+  font-size: 14px;
+}
+
+.searchBox input::placeholder {
+  color: #9aa19b;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.filter,
+.activeFilter {
+  min-height: 37px;
+  padding: 0 14px;
+  border: 1px solid #e8e5dd;
+  border-radius: 999px;
+  background: transparent;
+  color: #606b64;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.filter:hover {
+  border-color: #aab2ac;
+}
+
+.activeFilter {
+  border-color: #202a27;
+  background: #202a27;
+  color: white;
+}
+
+.filter:focus-visible,
+.activeFilter:focus-visible,
+.resetButton:focus-visible,
+.detailsLink:focus-visible {
+  outline: 3px solid rgb(238 118 85 / 45%);
+  outline-offset: 3px;
+}
+
+.resultCount {
+  margin: 0;
+  color: #79827c;
+  font-size: 12px;
+}
+
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 21px;
+}
+
+.eventCard {
+  overflow: hidden;
+  border: 1px solid #e9e7e0;
+  border-radius: 9px;
+  background: #fffefa;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.eventCard:hover {
+  box-shadow: 0 12px 30px rgb(32 42 39 / 8%);
+  transform: translateY(-3px);
+}
+
+.eventImage {
+  position: relative;
+  display: block;
+  height: 205px;
+  background-color: #d9d2c4;
+  background-position: center;
+  background-size: cover;
+  text-decoration: none;
+}
+
+.eventBadge {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  display: inline-flex;
+  min-height: 25px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 4px;
+  background: #fbfaf7;
+  color: #202a27;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.eventContent {
+  padding: 16px;
+}
+
+.eventTopline,
+.eventBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.eventTopline {
+  color: #ee7655;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.eventTopline span:last-child {
+  color: #7a847d;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.eventContent h2 {
+  margin: 10px 0 7px;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.5px;
+}
+
+.eventContent h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eventContent h2 a:hover {
+  color: #d96748;
+}
+
+.venue {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  color: #78817b;
+  font-size: 11px;
+}
+
+.eventBottom {
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid #e9e7e0;
+  color: #78817b;
+  font-size: 10px;
+}
+
+.eventBottom strong {
+  color: #202a27;
+  font-size: 13px;
+}
+
+.detailsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #202a27;
+  font-size: 11px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.emptyState {
+  padding: 58px 20px;
+  border: 1px dashed #d8d5cc;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.emptyState h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.emptyState p {
+  color: #78817b;
+  font-size: 13px;
+}
+
+.resetButton {
+  min-height: 40px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 6px;
+  background: #202a27;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+@media (max-width: 900px) {
+  .eventGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .eventGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 2px 2px 8px;
+  }
+
+  .filter,
+  .activeFilter {
+    flex: 0 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .filter,
+  .activeFilter,
+  .eventCard {
+    transition: none;
+  }
+}

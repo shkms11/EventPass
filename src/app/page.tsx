@@ -1,10 +1,10 @@
-import { CategorySection } from "@/components/homepage/category-section";
-import { FeaturedEvents } from "@/components/homepage/featured-events";
-import { HeroSection } from "@/components/homepage/hero-section";
-import { OrganizerCta } from "@/components/homepage/organizer-cta";
-import { SiteFooter } from "@/components/homepage/site-footer";
-import { SiteHeader } from "@/components/homepage/site-header";
-import styles from "@/components/homepage/homepage.module.css";
+import { CategorySection } from "@/shared/components/homepage/category-section";
+import { FeaturedEvents } from "@/shared/components/homepage/featured-events";
+import { HeroSection } from "@/shared/components/homepage/hero-section";
+import { OrganizerCta } from "@/shared/components/homepage/organizer-cta";
+import { SiteFooter } from "@/shared/components/homepage/site-footer";
+import { SiteHeader } from "@/shared/components/homepage/site-header";
+import styles from "@/shared/components/homepage/homepage.module.css";
 
 export default function Home() {
   return (

@@ -1,37 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EventPass
 
-## Getting Started
+EventPass is a feature-first event discovery and management platform starter.
+The current portfolio preview includes event discovery, category filters,
+event detail pages, and an organizer overview. Demo event data is local and
+ticket checkout, accounts, and event publishing are not connected yet.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+src/
+  app/                 Next.js routes and route-level metadata
+  features/
+    events/            Event types, demo data, discovery, and filtering
+    organizers/        Organizer-facing experience
+    auth/              Authentication feature boundary
+    bookings/          Booking feature boundary
+    payments/          Payment feature boundary
+    tickets/           Ticket feature boundary
+  modules/             Backend/domain module boundaries
+  shared/
+    components/
+      homepage/        Shared site shell and landing-page sections
+      ui/              Shared UI primitives
+```
 
-## Learn More
+Feature-specific UI and logic live with their feature. Cross-feature interface
+components live under `src/shared`. Routes in `src/app` compose those pieces.
 
-To learn more about Next.js, take a look at the following resources:
+## Checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm test
+npm run lint
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database setup
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# EventPass
+The Prisma/PostgreSQL foundation is configured but the event catalog currently
+uses demo data. Copy `.env.example` to `.env.local` and set `DATABASE_URL` when
+you start adding persisted data or run Prisma commands. Keep real credentials
+out of source control.
