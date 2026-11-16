@@ -63,6 +63,23 @@
   gap: 36px;
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerSignIn {
+  color: #5e6862;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.headerSignIn:hover {
+  color: var(--accent);
+}
+
 .navigation a,
 .footerLinks a {
   color: #5e6862;
@@ -886,6 +903,14 @@
   .headerCta {
     min-height: 39px;
     padding-inline: 11px;
+    font-size: 11px;
+  }
+
+  .headerActions {
+    gap: 10px;
+  }
+
+  .headerSignIn {
     font-size: 11px;
   }
 

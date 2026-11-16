@@ -1,0 +1,177 @@
+.page {
+  min-height: 100vh;
+  background: #fbfaf7;
+  color: #202a27;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+.main {
+  display: grid;
+  min-height: calc(100vh - 194px);
+  place-items: center;
+  padding: 55px 20px 70px;
+}
+
+.card {
+  width: min(100%, 440px);
+  padding: 34px;
+  border: 1px solid #e9e7e0;
+  border-radius: 10px;
+  background: #fffefa;
+  box-shadow: 0 12px 35px rgb(32 42 39 / 5%);
+}
+
+.eyebrow {
+  color: #ee7655;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+.card h1 {
+  margin: 11px 0 9px;
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.intro {
+  margin: 0;
+  color: #75807a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  color: #303a35;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.field input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #deded7;
+  border-radius: 6px;
+  background: white;
+  color: #202a27;
+  font: inherit;
+  font-size: 13px;
+}
+
+.field input:focus-visible {
+  border-color: #ee7655;
+  outline: 3px solid rgb(238 118 85 / 18%);
+}
+
+.hint {
+  color: #78817b;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.error,
+.success {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.error {
+  background: #fff0ef;
+  color: #a3312c;
+}
+
+.success {
+  background: #edf9f1;
+  color: #236942;
+}
+
+.submitButton {
+  min-height: 46px;
+  border: 0;
+  border-radius: 6px;
+  background: #202a27;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  transition:
+    background 150ms ease,
+    opacity 150ms ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: #394742;
+}
+
+.submitButton:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.submitButton:focus-visible,
+.secondaryLink:focus-visible,
+.switchMode a:focus-visible {
+  outline: 3px solid rgb(238 118 85 / 45%);
+  outline-offset: 3px;
+}
+
+.secondaryLink {
+  display: inline-block;
+  margin-top: 17px;
+  color: #56625b;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.secondaryLink:hover,
+.switchMode a:hover {
+  color: #d96748;
+}
+
+.switchMode {
+  margin: 20px 0 0;
+  color: #75807a;
+  font-size: 11px;
+  text-align: center;
+}
+
+.switchMode a {
+  color: #202a27;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.privacyNote {
+  margin: 19px 0 0;
+  color: #8a938c;
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding: 27px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submitButton {
+    transition: none;
+  }
+}

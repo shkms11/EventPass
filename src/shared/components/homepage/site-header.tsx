@@ -19,10 +19,15 @@ export function SiteHeader() {
           <Link href="/organize">For organizers</Link>
         </nav>
 
-        <Link className={styles.headerCta} href="/organize">
-          Create an event
-          <ArrowUpRight aria-hidden="true" size={16} />
-        </Link>
+        <div className={styles.headerActions}>
+          <Link className={styles.headerSignIn} href="/sign-in">
+            Sign in
+          </Link>
+          <Link className={styles.headerCta} href="/organize">
+            Create an event
+            <ArrowUpRight aria-hidden="true" size={16} />
+          </Link>
+        </div>
       </div>
     </header>
   );
