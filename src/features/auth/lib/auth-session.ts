@@ -23,7 +23,7 @@ export async function requireUser() {
 export async function requireRole(role: AppRole) {
   const user = await requireUser();
 
-  if (!canAccessRole(user.role, role)) {
+  if (!canAccessRole(user.role ?? "attendee", role)) {
     redirect("/account?notice=access-denied");
   }
 

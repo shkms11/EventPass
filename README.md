@@ -74,6 +74,12 @@ prints a randomly generated password once. Set `DEMO_USER_PASSWORD` in
 in production. Do not publish a seeded demo password or reuse it for a real
 account.
 
+For a local superadmin demo, verify the demo account and promote it:
+
+```bash
+SUPERADMIN_EMAIL="demo@eventpass.local" npm run db:promote:superadmin
+```
+
 ## Project structure
 
 ```text

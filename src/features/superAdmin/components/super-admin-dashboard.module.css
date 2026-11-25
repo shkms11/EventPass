@@ -90,6 +90,26 @@
   line-height: 1.7;
 }
 
+.success,
+.error {
+  margin: 18px 0 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.success {
+  border: 1px solid #d3eadc;
+  background: #eff9f3;
+  color: #287247;
+}
+
+.error {
+  border: 1px solid #f1d3c9;
+  background: #fff5f1;
+  color: #a44a32;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -118,24 +138,139 @@
   letter-spacing: -1px;
 }
 
-.notice {
-  margin-top: 24px;
-  padding: 20px 22px;
-  border: 1px solid #f1dfd7;
+.accounts {
+  margin-top: 36px;
+  overflow: hidden;
+  border: 1px solid #e5e9e6;
   border-radius: 9px;
-  background: #fffaf7;
+  background: #fff;
 }
 
-.notice h2 {
-  margin: 0;
-  font-size: 14px;
+.accountsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #edf0ed;
 }
 
-.notice p {
-  margin: 8px 0 0;
+.accountsHeader h2 {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
+.accountsHeader > span {
   color: #65716a;
   font-size: 12px;
-  line-height: 1.7;
+}
+
+.accountsEyebrow {
+  margin: 0;
+  color: #e16c4b;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 14px 22px;
+  border-bottom: 1px solid #edf0ed;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+.table th {
+  color: #65716a;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.table td strong,
+.table td strong + span {
+  display: block;
+}
+
+.table td strong + span {
+  margin-top: 3px;
+  color: #65716a;
+  font-size: 12px;
+}
+
+.verified,
+.unverified {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.verified {
+  background: #eaf7ef;
+  color: #287247;
+}
+
+.unverified {
+  background: #fff1ed;
+  color: #a44a32;
+}
+
+.roleForm {
+  display: flex;
+  gap: 8px;
+}
+
+.roleForm select,
+.roleForm button {
+  min-height: 36px;
+  border: 1px solid #dfe4e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #17211d;
+  font: inherit;
+  font-size: 12px;
+}
+
+.roleForm select {
+  min-width: 120px;
+  padding: 0 30px 0 10px;
+}
+
+.roleForm button {
+  padding: 0 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.roleForm button:disabled,
+.roleForm select:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 @media (max-width: 520px) {
