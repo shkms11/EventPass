@@ -16,7 +16,8 @@
     "test:e2e:ui": "playwright test --ui",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
-    "db:seed:demo": "tsx scripts/seed-demo-user.ts"
+    "db:seed:demo": "tsx scripts/seed-demo-user.ts",
+    "db:promote:superadmin": "tsx scripts/promote-superadmin.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.59",

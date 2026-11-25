@@ -4,7 +4,7 @@ import { cache } from "react";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
-import type { AppRole } from "./roles";
+import { canAccessRole, type AppRole } from "./roles";
 
 export const getCurrentSession = cache(async () =>
   auth.api.getSession({ headers: await headers() }),
@@ -23,7 +23,7 @@ export async function requireUser() {
 export async function requireRole(role: AppRole) {
   const user = await requireUser();
 
-  if (user.role !== role && user.role !== "admin") {
+  if (!canAccessRole(user.role, role)) {
     redirect("/account?notice=access-denied");
   }
 

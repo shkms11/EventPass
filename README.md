@@ -41,6 +41,25 @@ verified email addresses, enforces 12–128 character passwords, rate-limits
 sign-in and recovery routes in the database, and keeps account roles
 server-controlled. Protected pages check the session and role on the server.
 
+### Superadmin access
+
+Create an account through the normal sign-up flow and verify its email. Then
+grant the role from a trusted environment with database access:
+
+```bash
+SUPERADMIN_EMAIL="admin@example.com" npm run db:promote:superadmin
+```
+
+In production, also set `SUPERADMIN_BOOTSTRAP_CONFIRM=true` for that command.
+The promotion refuses missing or unverified accounts; superadmin privileges
+cannot be selected during public sign-up. Sign in normally to access
+`/superadmin`.
+
+Sessions are persisted by Better Auth in PostgreSQL. The browser receives the
+session token only in an HttpOnly, SameSite=Lax cookie, marked Secure in
+production; the application does not put auth tokens in localStorage or expose
+them in the dashboard.
+
 ### Local demo organizer
 
 After applying migrations, run:

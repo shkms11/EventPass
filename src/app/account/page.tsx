@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { SiteFooter } from "@/shared/components/homepage/site-footer";
 import { SiteHeader } from "@/shared/components/homepage/site-header";
 import { SignOutButton } from "@/features/auth/components/sign-out-button";
@@ -11,6 +12,10 @@ interface AccountPageProps {
 
 export default async function AccountPage({ searchParams }: AccountPageProps) {
   const [user, { notice }] = await Promise.all([requireUser(), searchParams]);
+
+  if (user.role === "superadmin") {
+    redirect("/superadmin");
+  }
 
   return (
     <div className={styles.page}>
